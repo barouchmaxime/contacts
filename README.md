@@ -10,3 +10,7 @@ to launch it locally:
 yarn install
 yarn dev
 ```
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

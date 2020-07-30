@@ -5,10 +5,10 @@ export function makeValidationForSchema(schema) {
       schema.validateSync(values, { abortEarly: false });
     } catch (e) {
       const errors = (e.inner.length ? e.inner : [e])
-        .map(({ path: name, message }) => ({ name, message }))
-        .reduce((acc, { name, message }) => {
-          console.log(acc, name, message);
-          set(acc, name, message);
+        .map(({ path: field, message }) => ({ field, message }))
+        .reduce((acc, { field, message }) => {
+          console.log(acc, field, message);
+          set(acc, field, message);
           return acc;
         }, {});
       return errors;
