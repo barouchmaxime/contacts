@@ -7,8 +7,14 @@ import * as mutations from "../store/mutations";
 import AppBar from "./AppBar";
 import { Contacts } from "./Contacts";
 import LoadingProgress from "./LoadingProgress";
+//import { useErrorHandler } from "react-error-boundary";
+import ErrorFallback from "./Error";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  alert: {
+    paddingLeft: 25,
+  },
+}));
 const selectFilteredContacts = createSelector(
   (state) => state.contacts,
   (state) => state.search,
@@ -26,11 +32,18 @@ export const Dashboard = () => {
   }, [dispatch]);
   const contacts = useSelector(selectFilteredContacts);
   const isLoading = useSelector((state) => state.isLoading);
-
+  const errorMessage = useSelector((state) => state.errorMessage);
+  console.log(errorMessage);
+  /* if (errorMessage) {
+    useErrorHandler(new Error(errorMessage));
+  } */
   return (
     <div>
       <AppBar />
       {isLoading ? <LoadingProgress /> : <Contacts contacts={contacts} />}
+      {errorMessage && (
+        <ErrorFallback classes={classes} error={new Error(errorMessage)} />
+      )}
     </div>
   );
 };

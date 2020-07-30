@@ -3,7 +3,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import { Dashboard } from "./Dashboard";
 import { Providers } from "./Providers";
 
-export const Main = () => (
+export default () => (
   <Providers>
     <CssBaseline />
     <Dashboard />
