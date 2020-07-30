@@ -7,7 +7,6 @@ export function makeValidationForSchema(schema) {
       const errors = (e.inner.length ? e.inner : [e])
         .map(({ path: field, message }) => ({ field, message }))
         .reduce((acc, { field, message }) => {
-          console.log(acc, field, message);
           set(acc, field, message);
           return acc;
         }, {});
