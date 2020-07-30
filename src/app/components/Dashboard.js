@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import * as mutations from "../store/mutations";
 import AppBar from "./AppBar";
 import { Contacts } from "./Contacts";
+import LoadingProgress from "./LoadingProgress";
 
 const useStyles = makeStyles((theme) => ({}));
 const selectFilteredContacts = createSelector(
@@ -24,11 +25,12 @@ export const Dashboard = () => {
     dispatch(mutations.loadContacts());
   }, [dispatch]);
   const contacts = useSelector(selectFilteredContacts);
+  const isLoading = useSelector((state) => state.isLoading);
 
   return (
     <div>
       <AppBar />
-      <Contacts contacts={contacts} />
+      {isLoading ? <LoadingProgress /> : <Contacts contacts={contacts} />}
     </div>
   );
 };
