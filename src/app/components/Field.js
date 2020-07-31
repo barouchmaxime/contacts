@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 const useStyles = makeStyles((theme) => ({
   text: {
-    fontSize: "9px",
+    fontSize: "7px",
     color: "grey",
   },
   labelFieldContainer: {
@@ -35,10 +35,10 @@ const useStyles = makeStyles((theme) => ({
     borderStyle: "solid",
   },
   field: {
-    marginTop: "5px",
+    marginTop: "3px",
   },
   error: {
-    fontSize: "8px",
+    fontSize: "6px",
     color: "red",
   },
 }));

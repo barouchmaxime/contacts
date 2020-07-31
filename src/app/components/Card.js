@@ -13,14 +13,14 @@ import { Field } from "./Field";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 135,
-    minWidth: 135,
-    maxHeight: 250,
-    minHeight: 250,
+    maxWidth: 105,
+    minWidth: 105,
+    maxHeight: 145,
+    minHeight: 145,
     margin: 5,
     "&:hover": {
       "& img.avatar": {
-        height: 120,
+        height: 65,
       },
       "& .phone, & .email": {
         display: "block",
@@ -28,7 +28,7 @@ const useStyles = makeStyles({
     },
   },
   image: {
-    height: 150,
+    height: 95,
     objectPosition: "top",
   },
   phone: {
@@ -38,22 +38,22 @@ const useStyles = makeStyles({
     display: "none",
   },
   action: {
-    padding: "10px",
+    padding: "7px",
     "& .MuiCardActionArea-focusHighlight": {
       backgroundColor: "#ffffff",
     },
   },
   content: {
     position: "relative",
-    padding: "25px 0 0 0",
+    padding: "10px 0 0 0",
   },
   iconRoot: {
     position: "absolute",
-    top: -15,
-    left: 10,
+    top: -13,
+    left: 7,
   },
   name: {
-    fontSize: "14px",
+    fontSize: "10px",
     fontWeight: "bold",
   },
 });
@@ -89,9 +89,9 @@ export default ({ card }) => {
             <Icon fontSize="large" classes={{ root: classes.iconRoot }}>
               {card.driverType &&
               card.driverType.trim().toLowerCase() === "citizen" ? (
-                <img width="32px" src="/assets/images/citizen.svg" />
+                <img width="22px" src="/assets/images/citizen.svg" />
               ) : (
-                <img width="32px" src="/assets/images/professional.svg" />
+                <img width="22px" src="/assets/images/professional.svg" />
               )}
             </Icon>
             <Field

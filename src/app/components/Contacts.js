@@ -14,10 +14,10 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
-    width: "580px",
+    width: "460px",
     margin: "40px 5px 40px 5px",
     [theme.breakpoints.down("xs")]: {
-      width: "445px",
+      width: "350px",
     },
   },
   contacts: {
